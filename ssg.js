@@ -35,6 +35,10 @@ http.createServer(function (req, res) {
     };
   })
 
+  if (req.url === '/') {
+    res.end(data)
+  };
+
 }).listen(8080);
 
 console.log("Now listening on local host 8080!")
