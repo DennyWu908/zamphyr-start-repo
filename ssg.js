@@ -19,7 +19,7 @@ var server = http.createServer(function (req, res) {
 
   // index.html is the name of the file created by createHTML.
 
-  fs.writeFile('index.html', html, function(err) {
+  fs.writeFile('index.html', htmlPage, function(err) {
     if (err) {
       console.log(err);
     };
