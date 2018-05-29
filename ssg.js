@@ -1,4 +1,6 @@
-var http = require("http");
+var http = require("http")
+, locale = require("locale")
+, supported = new locale.Locales(["en", "en_US", "ja"])
 var fs = require("fs");
 
 // The following is code for an npm package called create-html. As far as I can tell, fs has no way to generate HTML files by itself, so I am looking for other methods to do so. Similarly, marked is an npm package for parsing Markdown text.
@@ -24,7 +26,9 @@ var server = http.createServer(function (req, res) {
       console.log(err);
     };
 
-    res.writeHead(200)
+    var locales = new locale.Locales(req.headers["accept-language"])
+
+    res.writeHead(200, {"Content-Type": "text/plain"})
 
     // example.md is the Markdown file that the newly generated html file is supposed to be getting text from.
 
@@ -33,7 +37,12 @@ var server = http.createServer(function (req, res) {
         console.log(err);
       };
 
-      res.end(data)
+      res.end(
+        "You asked for: " + req.headers["accept-language"] + "\n" +
+        "We support: " + supported + "\n" +
+        "Our default is: " + locale.Locale["default"] + "\n" +
+        "The best match is: " + locales.best(supported) + "\n"
+      )
     });
   })
 

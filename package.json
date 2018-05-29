@@ -1,0 +1,25 @@
+{
+  "name": "zamphyr-start-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "(ssg.js)",
+  "dependencies": {
+    "create-html": "^4.1.0",
+    "file-system": "^2.2.2",
+    "locale": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DennyWu908/zamphyr-start-repo.git"
+  },
+  "author": "Denny Wu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DennyWu908/zamphyr-start-repo/issues"
+  },
+  "homepage": "https://github.com/DennyWu908/zamphyr-start-repo#readme"
+}
